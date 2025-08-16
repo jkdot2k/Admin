@@ -1,13 +1,28 @@
-import React from 'react'
-import {assets} from '../assets/assets'
+import React from "react";
+import { assets } from "../assets/assets";
 
-const Navbar = ({setToken}) => {
+const Navbar = ({ setToken }) => {
   return (
-    <div className='flex items-center py-2 px-[4%] justify-between'>
-        <img className='w-[max(10%,80px)]' src={assets.logo} alt="" />
-        <button onClick={()=>setToken('')} className='bg-gray-600 text-white px-5 py-2 sm:px-7 sm:py-2 rounded-full text-xs sm:text-sm'>Logout</button>
-    </div>
-  )
-}
+    <div className="sticky top-0 z-50 flex items-center justify-between px-16 py-6 bg-white shadow-md">
+      {/* Left - Logo / Title */}
+      <h1 className="text-xl font-bold text-gray-800 tracking-wide">
+        Dashboard
+      </h1>
 
-export default Navbar
+      {/* Right - Profile + Logout */}
+      <div className="flex items-center gap-4">
+
+
+        {/* Logout Button */}
+        <button
+          onClick={() => setToken("")}
+          className="bg-gray-700 hover:bg-gray-900 transition-colors px-5 py-2 rounded-full text-white text-sm shadow-sm"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
